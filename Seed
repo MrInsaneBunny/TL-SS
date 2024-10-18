@@ -1,7 +1,7 @@
 $localVersion = 3.4
 $configReq = 3
 
-$latestdl = 'https://github.com/The-Line-Gaming-Community/TL-SeedScript/releases/latest'
+$latestdl = 'https://github.com/MrInsaneBunny/TL-SS/releases'
 $elevate = "false"
 
 #######################################################################################################################################
@@ -238,8 +238,8 @@ $currentlySeeding = ""
 if($updater -eq 1){
     Write-Host ""
     Write-Host "Checking for Updates..."
-    $remoteVersionRaw = (Invoke-WebRequest -Method Get -Uri "https://raw.githubusercontent.com/The-Line-Gaming-Community/TL-SeedScript/main/version.txt" -UseBasicParsing).Content
-    $changeLog = (Invoke-WebRequest -Method Get -Uri "https://raw.githubusercontent.com/The-Line-Gaming-Community/TL-SeedScript/main/changelog.txt" -UseBasicParsing).Content
+    $remoteVersionRaw = (Invoke-WebRequest -Method Get -Uri "https://github.com/MrInsaneBunny/TL-SS/blob/351f7347874931e3dc701ee669b0f5c046fb1362/version.txt" .Content
+    $changeLog = (Invoke-WebRequest -Method Get -Uri "https://github.com/MrInsaneBunny/TL-SS/blob/351f7347874931e3dc701ee669b0f5c046fb1362/changelog.txt" -UseBasicParsing).Content
 
     if($verbose -eq 1){
         Write-Host "RemoteVersion Response: " $remoteVersionRaw
@@ -392,7 +392,7 @@ do {
     }
 
     $serversFromWeb = @{}
-    $serversFromWeb = (Invoke-WebRequest -Method Get -Uri "https://raw.githubusercontent.com/The-Line-Gaming-Community/TL-SeedScript/main/servers.txt" -UseBasicParsing).Content.Split(",")
+    $serversFromWeb = (Invoke-WebRequest -Method Get -Uri "https://github.com/MrInsaneBunny/TL-SS/blob/351f7347874931e3dc701ee669b0f5c046fb1362/servers.txt" -UseBasicParsing).Content.Split(",")
     if($verbose -eq 1){
         Write-Host "Servers To Seed: " $serversFromWeb
     }
